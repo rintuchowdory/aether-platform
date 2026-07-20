@@ -4,14 +4,23 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { GalaxyBackground } from "./components/GalaxyBackground";
 import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import Research from "./pages/Research";
+import Simulations from "./pages/Simulations";
+import Contact from "./pages/Contact";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
+      <Route path="/" component={Home} />
+      <Route path="/pricing" component={Pricing} />
+      <Route path="/research" component={Research} />
+      <Route path="/simulations" component={Simulations} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
@@ -26,11 +35,9 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
+          <GalaxyBackground />
           <Toaster />
           <Router />
         </TooltipProvider>

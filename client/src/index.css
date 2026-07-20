@@ -113,13 +113,94 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 220 10% 25%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 20% 15%;
+    --input: 220 20% 10%;
+    --ring: 180 100% 50%;
+    --radius: 0.5rem;
+    --neon-cyan: #00d9ff;
+    --neon-blue: #0066ff;
+    --neon-purple: #9d00ff;
+    --neon-pink: #ff006e;
+    --glow-cyan: 0 0 20px rgba(0, 217, 255, 0.5);
+    --glow-blue: 0 0 20px rgba(0, 102, 255, 0.5);
   }
+
+  * {
+    @apply border-border;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  }
+
+  .neon-border {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px rgba(0, 217, 255, 0.1);
+  }
+
+  .glass-effect {
+    background: rgba(13, 27, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+  }
+
+  .cosmic-bg {
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(20, 0, 40, 0.8) 100%);
+  }
+
+  .glow-text {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 217, 255, 0.5);
+  }
+
+  .glow-button {
+    @apply bg-accent text-accent-foreground font-semibold py-2 px-6 rounded transition-all duration-300;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.8), 0 0 40px rgba(0, 102, 255, 0.6);
+    transform: scale(1.05);
+  }
+
+  .glow-button:active {
+    transform: scale(0.98);
+  }
+}
+
+@layer utilities {
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
