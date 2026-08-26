@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { GalaxyBackground } from "./components/GalaxyBackground";
@@ -12,9 +12,11 @@ import Simulations from "./pages/Simulations";
 import Contact from "./pages/Contact";
 
 function Router() {
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
+    <WouterRouter base={basePath}>
+      <Switch>
       <Route path="/" component={Home} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/research" component={Research} />
@@ -23,7 +25,8 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+    </WouterRouter>
   );
 }
 
