@@ -13,19 +13,18 @@ import Simulations from "./pages/Simulations";
 import Contact from "./pages/Contact";
 
 function Router() {
-  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   // make sure to consider if you need authentication for certain routes
   return (
     <WouterRouter hook={useHashLocation}>
       <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/pricing" component={Pricing} />
-      <Route path="/research" component={Research} />
-      <Route path="/simulations" component={Simulations} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/404" component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
+        <Route path="/" component={Home} />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/research" component={Research} />
+        <Route path="/simulations" component={Simulations} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/404" component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
       </Switch>
     </WouterRouter>
   );

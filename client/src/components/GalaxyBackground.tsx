@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 export function GalaxyBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,8 +68,8 @@ export function GalaxyBackground() {
       }
     }
 
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
       size: 0.5,
@@ -107,11 +107,12 @@ export function GalaxyBackground() {
     // Handle scroll
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       scrollProgressRef.current = docHeight > 0 ? scrollTop / docHeight : 0;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Handle resize
     const handleResize = () => {
@@ -122,7 +123,7 @@ export function GalaxyBackground() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Animation loop
     let animationId: number;
@@ -155,8 +156,8 @@ export function GalaxyBackground() {
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationId);
       renderer.dispose();
       geometry.dispose();
@@ -171,7 +172,7 @@ export function GalaxyBackground() {
     <div
       ref={containerRef}
       className="fixed inset-0 -z-10"
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: "100%", height: "100%" }}
     />
   );
 }

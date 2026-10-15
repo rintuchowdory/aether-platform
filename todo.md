@@ -1,6 +1,7 @@
 # Aether Platform - Project TODO
 
 ## Core Infrastructure
+
 - [x] Install THREE.js and required dependencies
 - [x] Set up global THREE.js animated galaxy/nebula background with scroll reactivity
 - [x] Configure bloom lighting and cinematic camera effects
@@ -8,12 +9,14 @@
 - [x] Set up global typography with monospace and sans-serif fonts
 
 ## Navigation & Layout
+
 - [x] Create top navigation bar with glassmorphism effect
 - [x] Add navigation links: Home, Pricing, Research, Simulations, Contact
 - [x] Ensure navigation persists across all pages
 - [x] Create footer with platform/company/resource links and copyright
 
 ## Pages Implementation
+
 - [x] Home page with hero section and scroll-driven storytelling
 - [x] Pricing page with three tiered cards (Explorer $49/mo, Enterprise $199/mo, Sovereign Custom)
 - [x] Research Dashboard page with analytics panels and data visualizations
@@ -21,6 +24,7 @@
 - [x] Contact page with futuristic inquiry form (name, email, message fields)
 
 ## Interactive Features
+
 - [x] Implement Recharts scenario projection chart on Simulations page
 - [x] Create Volatility and Growth Factor parameter sliders
 - [x] Build animated "Run Simulation" button with outcome cycling (Optimistic, Baseline, Pessimistic)
@@ -28,16 +32,19 @@
 - [x] Implement glowing neon effects on interactive elements
 
 ## Testing & Optimization
+
 - [x] Write vitest tests for core components and interactions
 - [x] Verify THREE.js performance and scroll responsiveness
 - [x] Test responsive design across breakpoints
 - [x] Optimize bundle size and loading performance
 
 ## Deployment
+
 - [x] Create checkpoint before GitHub push
 - [x] Push project to GitHub repository
 
 ## Design Improvements (Phase 2)
+
 - [x] Redesign Home page hero with integrated dashboard mockup on the right
 - [x] Add "Advanced Intelligence" section with 6 feature cards in grid layout
 - [x] Add "Command Center" section with large 3D visualization

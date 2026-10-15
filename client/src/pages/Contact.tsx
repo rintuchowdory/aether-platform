@@ -1,23 +1,25 @@
-import { useState } from 'react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
@@ -26,10 +28,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: "", email: "", message: "" });
       setSubmitted(false);
     }, 3000);
   };
@@ -44,9 +46,12 @@ export default function Contact() {
             <span className="text-xs font-mono text-accent uppercase tracking-widest">
               ◆ Get in Touch
             </span>
-            <h1 className="text-5xl font-bold mt-4 mb-6 glow-text">CONTACT US</h1>
+            <h1 className="text-5xl font-bold mt-4 mb-6 glow-text">
+              CONTACT US
+            </h1>
             <p className="text-xl text-foreground/70">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We'd love to hear from you. Send us a message and
+              we'll respond as soon as possible.
             </p>
           </div>
 
@@ -73,7 +78,10 @@ export default function Contact() {
           <div className="glass-effect p-12 rounded-lg max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Name
                 </label>
                 <Input
@@ -88,7 +96,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Email
                 </label>
                 <Input
@@ -104,7 +115,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Message
                 </label>
                 <Textarea
@@ -119,38 +133,46 @@ export default function Contact() {
                 />
               </div>
 
-            <Button type="submit" className="glow-button w-full" disabled={submitted}>
-              {submitted ? '✓ Message Sent' : 'Send Message'}
-            </Button>
+              <Button
+                type="submit"
+                className="glow-button w-full"
+                disabled={submitted}
+              >
+                {submitted ? "✓ Message Sent" : "Send Message"}
+              </Button>
             </form>
 
             {submitted && (
               <div className="mt-6 p-4 bg-accent/10 border border-accent/30 rounded-lg text-center">
-                <p className="text-accent font-medium">Thank you! We'll get back to you soon.</p>
+                <p className="text-accent font-medium">
+                  Thank you! We'll get back to you soon.
+                </p>
               </div>
             )}
           </div>
 
           {/* FAQ Section */}
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-center mb-12 glow-text">FREQUENTLY ASKED QUESTIONS</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 glow-text">
+              FREQUENTLY ASKED QUESTIONS
+            </h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
                 {
-                  q: 'Is my data secure?',
-                  a: 'Yes, we use enterprise-grade encryption and comply with all major data protection regulations.',
+                  q: "Is my data secure?",
+                  a: "Yes, we use enterprise-grade encryption and comply with all major data protection regulations.",
                 },
                 {
-                  q: 'What support is available?',
-                  a: 'We offer email support for all tiers, with priority and 24/7 support available for Enterprise and Sovereign plans.',
+                  q: "What support is available?",
+                  a: "We offer email support for all tiers, with priority and 24/7 support available for Enterprise and Sovereign plans.",
                 },
                 {
-                  q: 'Can I integrate with existing systems?',
-                  a: 'Yes, our API supports integration with most modern platforms and data sources.',
+                  q: "Can I integrate with existing systems?",
+                  a: "Yes, our API supports integration with most modern platforms and data sources.",
                 },
                 {
-                  q: 'How do I get started?',
-                  a: 'Choose a pricing tier and follow our onboarding process. You can be up and running in minutes.',
+                  q: "How do I get started?",
+                  a: "Choose a pricing tier and follow our onboarding process. You can be up and running in minutes.",
                 },
               ].map((faq, idx) => (
                 <div key={idx} className="glass-effect p-6 rounded-lg">

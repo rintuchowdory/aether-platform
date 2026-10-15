@@ -7,6 +7,12 @@ dist/
 build/
 *.dist
 
+# Generated GitHub Pages publication files
+/assets/
+/404.html
+/index.html
+**/__manus__/
+
 # Generated files
 *.tsbuildinfo
 coverage/

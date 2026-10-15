@@ -1,4 +1,4 @@
-import { Link } from 'wouter';
+import { Link } from "wouter";
 
 export function Footer() {
   return (
@@ -38,7 +38,10 @@ export function Footer() {
             <h4 className="font-semibold text-accent mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   About
                 </a>
               </li>
@@ -50,7 +53,10 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Careers
                 </a>
               </li>
@@ -62,17 +68,26 @@ export function Footer() {
             <h4 className="font-semibold text-accent mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Blog
                 </a>
               </li>
@@ -84,17 +99,26 @@ export function Footer() {
             <h4 className="font-semibold text-accent mb-4">Legal</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Terms
                 </a>
               </li>
               <li>
-                <a href="#" className="text-foreground/70 hover:text-accent transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-foreground/70 hover:text-accent transition-colors text-sm"
+                >
                   Security
                 </a>
               </li>
@@ -107,7 +131,10 @@ export function Footer() {
             © 2026 Aether Intelligence. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-foreground/60 hover:text-accent transition-colors">
+            <a
+              href="#"
+              className="text-foreground/60 hover:text-accent transition-colors"
+            >
               <span className="text-sm">F</span>
             </a>
           </div>

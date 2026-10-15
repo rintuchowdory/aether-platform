@@ -41,6 +41,7 @@ Currently, the workflows don't require additional secrets, but you can add them 
 **Trigger:** Push to `main` or `develop` branches, or pull requests
 
 **Steps:**
+
 - Checks out code
 - Sets up Node.js (tests on 18.x and 20.x)
 - Installs dependencies with pnpm
@@ -55,6 +56,7 @@ Currently, the workflows don't require additional secrets, but you can add them 
 **Trigger:** Push to `main` branch or manual workflow dispatch
 
 **Steps:**
+
 1. **Build Job:**
    - Checks out code
    - Sets up Node.js 20.x
