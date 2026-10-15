@@ -23,6 +23,11 @@ export function Navigation() {
               Research
             </span>
           </Link>
+          <Link href="/intelligence">
+            <span className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors cursor-pointer">
+              Intelligence
+            </span>
+          </Link>
           <Link href="/simulations">
             <span className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors cursor-pointer">
               Simulations

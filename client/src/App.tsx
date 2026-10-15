@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import Research from "./pages/Research";
 import Simulations from "./pages/Simulations";
 import Contact from "./pages/Contact";
+import Intelligence from "./pages/Intelligence";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/research" component={Research} />
         <Route path="/simulations" component={Simulations} />
         <Route path="/contact" component={Contact} />
+        <Route path="/intelligence" component={Intelligence} />
         <Route path="/404" component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
