@@ -25,9 +25,23 @@ export function GalaxyBackground() {
     camera.position.z = 100;
     cameraRef.current = camera;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // Some browsers, privacy modes, and low-power devices expose no WebGL
+    // context. Detect that case before Three.js tries to create a renderer;
+    // the component's CSS background remains visible as a graceful fallback.
+    const probe = document.createElement("canvas");
+    const hasWebGL = Boolean(
+      probe.getContext("webgl2") || probe.getContext("webgl")
+    );
+    if (!hasWebGL) return;
+
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    } catch {
+      return;
+    }
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 1);
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
@@ -172,7 +186,12 @@ export function GalaxyBackground() {
     <div
       ref={containerRef}
       className="fixed inset-0 -z-10"
-      style={{ width: "100%", height: "100%" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        background:
+          "radial-gradient(circle at 50% 35%, rgba(0, 102, 255, 0.14), transparent 42%), linear-gradient(135deg, #001422 0%, #0d001c 100%)",
+      }}
     />
   );
 }
